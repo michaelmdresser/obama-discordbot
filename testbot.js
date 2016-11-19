@@ -10,10 +10,6 @@ bot.on("message", msg => {
 
     if (msg.author.bot) return;
 
-    if (msg.content.startsWith(prefix + "ping")) {
-        msg.channel.sendMessage("pong!");
-    }
-
     else if (msg.content.startsWith(prefix + "obama")) {
         request("https://talk-to-obama.herokuapp.com/chat", function(error, response, body) {
             //console.log(body);
