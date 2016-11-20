@@ -47,4 +47,6 @@ bot.on('ready', () => {
   console.log('I am ready!');
 });
 
-bot.login("");
+var KEY = process.env.KEY || require('./config')
+
+bot.login(KEY);
