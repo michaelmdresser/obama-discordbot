@@ -18,7 +18,7 @@ bot.on("message", msg => {
         });
     }
 
-    else if (msg.content.length > 7)) {
+    else if (msg.content.length > 7) {
         if (Number(msg.content.substring(7, msg.content.length)) != NaN) {
             request("https://talk-to-obama.herokuapp.com/chat?size=" + Number(msg.content.substring(7, msg.content.length)), function(error, response, body) {
                 msg.channel.sendMessage(JSON.parse(body).content)
