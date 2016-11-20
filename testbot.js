@@ -16,12 +16,7 @@ bot.on("message", msg => {
 
     if (msg.author.bot) return;
 
-
-
     else if (msg.content.startsWith(prefix + "obama tweet")) {
-        //request("https://talk-to-obama.herokuapp.com/chat", function(error, response, body) {
-        //    msg.channel.sendMessage(JSON.parse(body).content)
-        //});
         requestContent("tweet", content => {
             msg.channel.sendMessage(content)
         });
@@ -29,17 +24,10 @@ bot.on("message", msg => {
 
     else if (msg.content.length > 7) {
         if (Number(msg.content.substring(7, msg.content.length)) != NaN) {
-            //request("https://talk-to-obama.herokuapp.com/chat?size=" + Number(msg.content.substring(7, msg.content.length)), function(error, response, body) {
-            //    msg.channel.sendMessage(JSON.parse(body).content)
-            //});
-            //msg.channel.sendMessage(requestContent(Number(msg.content.substring(7, msg.content.length))));
             requestContent(Number(msg.content.substring(7, msg.content.length)), content => {
                 msg.channel.sendMessage(content)
             });
         } else {
-            //request("https://talk-to-obama.herokuapp.com/chat", function(error, response, body) {
-            //    msg.channel.sendMessage(JSON.parse(body).content)
-            //});
             requestContent("", content => {
                 msg.channel.sendMessage(content)
             });
@@ -48,14 +36,10 @@ bot.on("message", msg => {
     }
 
     else if (msg.content.startsWith(prefix + "obama")) {
-        //request("https://talk-to-obama.herokuapp.com/chat", function(error, response, body) {
-        //    msg.channel.sendMessage(JSON.parse(body).content)
-        //});
         requestContent("", content => {
             msg.channel.sendMessage(content)
         });
     }
-
 
 });
 
