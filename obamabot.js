@@ -23,7 +23,7 @@ bot.on("message", msg => {
     }
 
     else if (msg.content.length > 7) {
-        if (Number(msg.content.substring(7, msg.content.length)) != NaN) {
+        if (Number(msg.content.substring(7, msg.content.length)) != NaN && Number(msg.content.substring(7, msg.content.length)) <= 20) {
             requestContent(Number(msg.content.substring(7, msg.content.length)), content => {
                 msg.channel.sendMessage(content)
             });
