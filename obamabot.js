@@ -22,7 +22,7 @@ bot.on("message", msg => {
         });
     }
 
-    else if (msg.content.length > 7) {
+    else if (msg.content.length > 7 && msg.content.startsWith(prefix + "obama")) {
         num = Number(msg.content.substring(7, msg.content.length));
         if (num != NaN && num <= 17) {
             requestContent(Number(msg.content.substring(7, msg.content.length)), content => {
